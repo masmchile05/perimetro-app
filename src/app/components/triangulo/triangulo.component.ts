@@ -32,4 +32,12 @@ export class TrianguloComponent {
       this.mostrarResultado = false;
     }
   }
+
+  limpiar(): void {
+    this.lado1 = null;
+    this.lado2 = null;
+    this.lado3 = null;
+    this.resultado = null;
+    this.mostrarResultado = false;
+  }
 }

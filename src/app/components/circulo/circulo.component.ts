@@ -26,4 +26,10 @@ export class CirculoComponent {
       this.mostrarResultado = false;
     }
   }
+
+  limpiar(): void {
+    this.radio = null;
+    this.resultado = null;
+    this.mostrarResultado = false;
+  }
 }

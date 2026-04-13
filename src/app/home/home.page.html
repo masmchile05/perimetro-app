@@ -1,23 +1,36 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Cálculo de perímetros</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-item>
-    <ion-label>Seleccione una figura</ion-label>
-    <ion-select [(ngModel)]="figuraSeleccionada" placeholder="Elegir figura">
-      <ion-select-option value="circulo">Círculo</ion-select-option>
-      <ion-select-option value="triangulo">Triángulo escaleno</ion-select-option>
-    </ion-select>
-  </ion-item>
+<ion-content class="fondo-home">
+  <div class="contenedor-home">
+    <div class="encabezado">
+      <h1>Aplicación de Figuras Geométricas</h1>
+      <p>
+        Seleccione una figura, ingrese los datos solicitados y calcule su perímetro.
+      </p>
+    </div>
 
-  <div *ngIf="figuraSeleccionada === 'circulo'">
-    <app-circulo></app-circulo>
-  </div>
+    <ion-card class="selector-card">
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label position="stacked">Seleccione una figura</ion-label>
+          <ion-select [(ngModel)]="figuraSeleccionada" placeholder="Elegir figura" interface="popover">
+            <ion-select-option value="circulo">Círculo</ion-select-option>
+            <ion-select-option value="triangulo">Triángulo escaleno</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
 
-  <div *ngIf="figuraSeleccionada === 'triangulo'">
-    <app-triangulo></app-triangulo>
+    <div *ngIf="figuraSeleccionada === 'circulo'" class="animacion">
+      <app-circulo></app-circulo>
+    </div>
+
+    <div *ngIf="figuraSeleccionada === 'triangulo'" class="animacion">
+      <app-triangulo></app-triangulo>
+    </div>
   </div>
 </ion-content>
